@@ -1,0 +1,14 @@
+Notes
+
+Project setup
+1) npm init -y
+2) npm install nodemon --save-dev
+3) npm install express dotenv ejs
+
+
+
+database setup 
+1) npm install --save-dev sequelize-cli
+2) npx sequelize-cli init
+
+
