@@ -3,7 +3,6 @@ import dotenv from 'dotenv'
 import path from 'path'
 
 dotenv.config();
-
 const app = express();
 
 // middleware
@@ -11,6 +10,7 @@ app.set('view engine','ejs');
 // 👇 Where views live
 app.set("views", path.join(process.cwd(), "view"));
 
+// It tells Express where all the view templates like EJS files are located
 app.use(express.json());
 app.use(express.urlencoded({extended:false}));
 app.use('/assets', express.static('assets'));
