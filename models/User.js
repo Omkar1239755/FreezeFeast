@@ -1,5 +1,5 @@
 import { DataTypes } from "sequelize";
-import sequelize from "../config/database.js";   // tumhara sequelize instance
+import sequelize from "../config/db.js";   // tumhara sequelize instance
 
 const User = sequelize.define(
   "User",

@@ -88,42 +88,38 @@
                     </button>
                     
                     <!-- User Menu (Before Login) -->
-                    <a href="/register" class="ff-login-link" id="loginLink">
-                        <button class="ff-user-btn">
-                            <i class="fa-regular fa-user"></i>
-                        </button>
-                    </a>
-                    
-                    <!-- User Menu (After Login) -->
-                    <div class="ff-user-dropdown" id="userDropdown">
-                        <button class="ff-user-btn ff-user-logged" id="userBtn">
+
+               <% if (!user) { %>
+                <!-- Not Logged In -->
+                <a href="/register" class="ff-login-link">
+                    <button class="ff-user-btn">
+                        <i class="fa-regular fa-user"></i>
+                    </button>
+                </a>
+            <% } else { %>
+                <!-- Logged In -->
+                <div class="ff-user-dropdown">
+                    <button class="ff-user-btn ff-user-logged">
+                        <i class="fa-solid fa-user"></i>
+                    </button>
+
+                    <div class="ff-dropdown-menu">
+                        <span class="ff-user-name"><%= user.name %></span>
+
+                        <a href="" class="ff-dropdown-item">
                             <i class="fa-solid fa-user"></i>
-                        </button>
-                        <div class="ff-dropdown-menu" id="dropdownMenu">
-                            <a href="profile.html" class="ff-dropdown-item active">
-                                <i class="fa-solid fa-user"></i>
-                                <span>Profile</span>
-                            </a>
-                            <a href="my-orders.html" class="ff-dropdown-item">
-                                <i class="fa-solid fa-box"></i>
-                                <span>My Orders</span>
-                            </a>
-                            <a href="shipping-address.html" class="ff-dropdown-item">
-                                <i class="fa-solid fa-truck-fast"></i>
-                                <span>Shipping Address</span>
-                            </a>
-                            <a href="change-password.html" class="ff-dropdown-item">
-                                <i class="fa-solid fa-lock"></i>
-                                <span>Change Password</span>
-                            </a>
-                            <div class="ff-dropdown-divider"></div>
-                            <button class="ff-logout-btn" id="logoutBtn">
-                                <span>Logout</span>
-                                <i class="fa-solid fa-right-from-bracket"></i>
-                            </button>
-                        </div>
+                            <span>Profile</span>
+                        </a>
+
+                        <a href="" class="ff-dropdown-item">
+                            <i class="fa-solid fa-right-from-bracket"></i>
+                            <span>Logout</span>
+                        </a>
                     </div>
-                    
+                </div>
+            <% } %>
+
+
                     <a href="cart.html">
                         <button class="ff-cart-btn">
                             <i class="fa-solid fa-cart-shopping"></i>

@@ -12,6 +12,18 @@
             <p class="register-subtitle">A link to set a new password will be sent to your email address.</p>
         </div>
 
+        <% if (success.length > 0) { %>
+            <div class="alert alert-success">
+              <%= success[0] %>
+            </div>
+          <% } %>
+          
+          <% if (error.length > 0) { %>
+            <div class="alert alert-danger">
+              <%= error[0] %>
+            </div>
+          <% } %>
+          
         <!-- Register Form -->
     <form class="register-form" action="#" method="POST">
             <!-- Full Name Field -->
@@ -20,7 +32,7 @@
                 <input 
                     type="text" 
                     id="fullName" 
-                    name="fullName" 
+                    name="name" 
                     placeholder="Enter full name" 
                     required
                     autocomplete="name"
@@ -47,10 +59,9 @@
                     type="password" 
                     id="password" 
                     name="password" 
-                    placeholder="8+ characters" 
                     required
                     autocomplete="new-password"
-                    minlength="8"
+                  
                 >
                 <button type="button" class="password-toggle" data-target="password">
                     <i class="fa-regular fa-eye"></i>
@@ -76,7 +87,7 @@
 
         <!-- Login Link -->
         <div class="login-link">
-            <p>Already have an account? <a href="login.html">Sign In</a></p>
+            <p>Already have an account? <a href="/login">Sign In</a></p>
         </div>
     </div>
 </section>

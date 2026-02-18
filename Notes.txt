@@ -24,5 +24,73 @@ ans)  Router helps us manage all URLs of the website in an organized way.
       It allows us to move routes into separate files, which improves readability and 
       makes large applications easier to maintain.
 
+ 2> jOI VALLIDATION = “Sirf jo schema me hai wahi allow hai.
+                       Jo extra aaye = ❌ error” LARAVEL ME AISA NE THA PR JO SCHEMA ME DLO WOI HE  VALIDATE KRO
+                       BAKI IGNORE 
 
 
+
+
+
+
+Session Concept in Nodejs 
+
+ In  node js u have to  maintain the session and store the user data in session
+ as http forget the  which user is login 
+
+ for that ->
+ a) npm install express-session 
+ b) import session from "express-session";
+      app.use(session({
+      name: "freeze_session",
+      secret: "freeze-feast-secret",
+      resave: false,
+      saveUninitialized: false,
+      cookie: { maxAge: 1000 * 60 * 60 * 24 }
+      }));
+
+ C)   Har request pe
+      app.use((req,res,next)=>{
+      res.locals.user = req.session.user || null;
+      next();
+      });
+
+
+
+
+
+
+
+
+SESSION FLASH MESSAGE PROCESSS
+
+A)     npm install express-session connect-flash
+B)     import session from "express-session";
+       import flash from "connect-flash";
+
+      app.use(session({
+      secret: "freeze-feast-secret",
+      resave: false,
+      saveUninitialized: true
+      }));
+
+      app.use(flash());   
+      
+      app.use((req, res, next) => {
+      res.locals.success = req.flash("success");
+      res.locals.error = req.flash("error");
+      next();
+      });
+      (ISKO MAIN.JS ME KRNA) 
+
+C)    <% if (success.length > 0) { %>
+      <div class="alert alert-success">
+      <%= success[0] %>
+      </div>
+      <% } %>
+
+      <% if (error.length > 0) { %>
+      <div class="alert alert-danger">
+      <%= error[0] %>
+      </div>
+      <% } %>
