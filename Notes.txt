@@ -24,10 +24,13 @@ ans)  Router helps us manage all URLs of the website in an organized way.
       It allows us to move routes into separate files, which improves readability and 
       makes large applications easier to maintain.
 
- 2> jOI VALLIDATION = “Sirf jo schema me hai wahi allow hai.
+2> jOI VALLIDATION = “Sirf jo schema me hai wahi allow hai.
                        Jo extra aaye = ❌ error” LARAVEL ME AISA NE THA PR JO SCHEMA ME DLO WOI HE  VALIDATE KRO
                        BAKI IGNORE 
 
+
+3>    Login par server session banata hai aur browser ko session ID cookie deta hai, aur har request 
+      me browser wo cookie bhejta hai jisse server user ko identify karta hai.
 
 
 

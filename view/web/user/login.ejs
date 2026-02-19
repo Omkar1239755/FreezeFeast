@@ -11,20 +11,7 @@
                 <p class="login-subtitle">Enter your credential to continue</p>
             </div>
 
-
-    <% if (success.length > 0) { %>
-        <div class="alert alert-success">
-            <%= success[0] %>
-        </div>
-        <% } %>
-        
-        <% if (error.length > 0) { %>
-        <div class="alert alert-danger">
-            <%= error[0] %>
-        </div>
-        <% } %>
-
-
+ 
      <!-- Login Form -->
      <form class="login-form" id="loginForm" method="post"  route="/login">
                 <!-- Email Field -->
@@ -73,4 +60,5 @@
     </section>
 
 
-<% - include('../partials/footer')  %>
+
+<%- include('../partials/header') %>

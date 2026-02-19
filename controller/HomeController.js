@@ -67,36 +67,52 @@ export const RegisterData = async(req,res)=>{
 
  export const LoginData = async(req,res)=>{
 
-    const {email,password} = req.body;
-    if(!email || !password){
-        req.flash("error", "Email and password required");
-        return res.redirect("/login");
-    }
+        const {email,password} = req.body;
+        if(!email || !password){
+            req.flash("error", "Email and password required");
+            return res.redirect("/login");
+        }
 
-    const user = await User.findOne({where:{email}});
+        const user = await User.findOne({where:{email}});
 
-    const isMatch = await bcrypt.compare(password,user.password);
+        const isMatch = await bcrypt.compare(password,user.password);
 
-    if (!isMatch) {
-        req.flash("error", "Wrong password");
-        return res.redirect("/login");
-    }
-  
-      // 4️⃣ Login success → save in session
-      console.log("SESSION BEFORE:", req.session.user);
-      // user mil gaya maan ke
-      req.session.user = {
-        id: user.id,
-        name: user.name,
-        email: user.email
-      };
-
-    console.log("SESSION AFTER:", req.session.user);
+        if (!isMatch) {
+            req.flash("error", "Wrong password");
+            return res.redirect("/login");
+        }
     
-    req.flash("success", "Login successful");
 
-  
-      // 5️⃣ Redirect after login
-    return res.redirect("/");
+        // user mil gaya maan ke
+        req.session.user = {
+                                id: user.id,
+                                name: user.name,
+                                email: user.email
+                            };
+
+
+        req.flash("success", "Login successful");
+
+    
+        // 5️⃣ Redirect after login
+        return res.redirect("/");
 
  }
+
+
+
+  export const  Logout = async(req,res)=>{
+  
+        req.session.destroy((err) => {
+            if (err) {
+            console.log("Logout Error:", err);
+            return res.redirect("/");
+            }
+        
+            res.clearCookie("freeze_session"); 
+
+            return res.redirect("/login");
+        });
+  }
+
+
