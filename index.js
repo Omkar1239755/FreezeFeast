@@ -33,7 +33,6 @@
 
 
     app.use((req, res, next) => {
-      console.log("SESSION GLOBAL:", req.session.user);
       res.locals.user = req.session.user || null;
       next();
     });
@@ -44,8 +43,12 @@
 
 
   // Route
-  import Router from './route/home.route.js';
+  import Router from './route/Website/home.route.js';
   app.use(Router);
+
+import AdminHomeRoute from './route/Admin/home.route.js';
+app.use(AdminHomeRoute); 
+
 
   app.listen('3000',()=>{
       console.log('Server is start')

@@ -1,5 +1,5 @@
 import express from 'express';
-import { Index,RegisterUser,RegisterData,LoginUser,LoginData,Logout } from '../controller/HomeController.js';
+import { Index,RegisterUser,RegisterData,LoginUser,LoginData,Logout,Category } from '../../controller/WebsiteController/HomeController.js';
 
 
 const Router = express.Router();
@@ -10,6 +10,7 @@ Router.post('/register',RegisterData)
 Router.get('/login',LoginUser)
 Router.post('/login',LoginData)
 Router.get('/logout',Logout)
+Router.get('/category',Category);
 
 
 

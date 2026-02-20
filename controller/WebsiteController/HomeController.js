@@ -1,6 +1,6 @@
 import { register } from "module";
 import Joi from "joi";
-import User from "../models/User.js";
+import User from "../../models/User.js";
 import bcrypt from 'bcryptjs';
 
 
@@ -114,5 +114,13 @@ export const RegisterData = async(req,res)=>{
             return res.redirect("/login");
         });
   }
+
+
+export const Category = async(req,res)=>{
+
+   return res.render('web/user/register')
+
+
+}
 
 
