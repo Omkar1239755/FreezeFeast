@@ -81,7 +81,7 @@ export const RegisterData = async(req,res)=>{
             req.flash("error", "Wrong password");
             return res.redirect("/login");
         }
-    
+
 
         // user mil gaya maan ke
         req.session.user = {
@@ -93,15 +93,15 @@ export const RegisterData = async(req,res)=>{
 
         req.flash("success", "Login successful");
 
-    
+
         // 5️⃣ Redirect after login
         return res.redirect("/");
 
- }
+    }
 
 
 
-  export const  Logout = async(req,res)=>{
+    export const  Logout = async(req,res)=>{
   
         req.session.destroy((err) => {
             if (err) {
@@ -113,14 +113,36 @@ export const RegisterData = async(req,res)=>{
 
             return res.redirect("/login");
         });
-  }
+    }
 
 
-export const Category = async(req,res)=>{
+    export const Category = async(req,res)=>{
 
-   return res.render('web/user/register')
+        return res.render('web/category');
+
+    }
+
+    export const About = async(req,res)=>{
+
+       return res.render('web/about');
 
 
-}
+    }
+
+    export const Contact = async(req,res)=>{
+
+        return res.render('web/contact');
+
+     }
+    
+     
+    export const Cart = async(req,res)=>{
+
+        return res.render('web/cart');
+
+
+    } 
+
+    
 
 
