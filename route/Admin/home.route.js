@@ -1,12 +1,11 @@
 import express from 'express';
-import {Index} from '../../controller/AdminController/HomeController.js';
-
-
+import {Index,Category} from '../../controller/AdminController/HomeController.js';
 
 export const AdminHomeRoute =  express.Router();
 
 
 AdminHomeRoute.get('/admin',Index);
+AdminHomeRoute.get('/add-category',Category);
 
 
 

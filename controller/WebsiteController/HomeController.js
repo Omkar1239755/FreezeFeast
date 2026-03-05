@@ -137,10 +137,8 @@ export const RegisterData = async(req,res)=>{
     
      
     export const Cart = async(req,res)=>{
-
+     console.log("helo")
         return res.render('web/cart');
-
-
     } 
 
     

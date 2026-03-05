@@ -14,6 +14,7 @@ database setup
 
 Migation create krni ke table 
 1) npx sequelize-cli migration:generate --name create-users-table
+2) npx sequelize-cli db:migrate
 
 
 
