@@ -1,93 +1,79 @@
-<div class="content-wrapper">
 
-    ```
-    <section class="content-header">
-        <div class="container-fluid">
-            <div class="row mb-2">
-                <div class="col-sm-6">
-                    <h1></h1>
-                </div>
-    
-                <div class="col-sm-6">
-                    <ol class="breadcrumb float-sm-right">
-                        <li class="breadcrumb-item">
-                            <a href="">Home/school</a>
-                        </li>
-                        <li class="breadcrumb-item active"></li>
-                    </ol>
-                </div>
-    
-            </div>
-        </div>
-    </section>
-    
-    
-    <section class="content">
-        <div class="container-fluid">
-    
-            <div class="row">
-                <div class="col-12">
-    
-                    <div class="card">
-    
-                        <div class="card-header">
-    
-                        
-                            <div class="alert alert-success alert-dismissible fade show">
-                                <strong>Success:</strong> 
-                                <button type="button" class="close" data-dismiss="alert">
-                                    <span>&times;</span>
-                                </button>
-                            </div>
-                     
-    
-                            <h3 class="card-title nofloat">
-                                <span></span>
-    
-                                <span>
-                                    <a href="/admin/add-school">
-                                        <button type="button" class="btn btn-block btn-primary">
-                                            <i class="fa-solid fa-plus"></i> Add School
-                                        </button>
-                                    </a>
-                                </span>
-    
-                            </h3>
-                        </div>
-    
-    
-                        <div class="card-body">
-    
-                            <table class="table table-bordered table-hover">
-    
-                                <thead>
-                                    <tr>
-                                        <th>S.No.</th>
-                                        <th>Category</th>
-                                        <th>Image</th>
+<div class="app-wrapper">
+
+    <%- include('../partials/header') %>
+    <%- include('../partials/sidebar') %>
+
+<main class="app-main">
+            <div class="content-wrapper">
+
+               
+                
+                <section class="content">
+                    <div class="container-fluid">
+                
+                        <div class="row">
+                            <div class="col-12">
+                
+                                <div class="card">
+                
+                                    <div class="card-header">
+                
                                 
-                                        <th class="text-center">Action</th>
-                                    </tr>
-                                </thead>
-    
-                                <tbody>
-    
-                       
-    
-                                </tbody>
-    
-                            </table>
-    
+                
+                                        <h3 class="card-title nofloat">
+                                            <span></span>
+                
+                                            <span>
+                                                <a href="/admin/add-category">
+                                                    <button type="button" class="btn btn-block btn-primary">
+                                                        <i class="fa-solid fa-plus"></i> Add Category
+                                                    </button>
+                                                </a>
+                                            </span>
+                
+                                        </h3>
+                                    </div>
+                
+                
+                                    <div class="card-body">
+                
+                                        <table class="table table-bordered table-hover">
+                
+                                            <thead>
+                                                <tr>
+                                                    <th>S.No.</th>
+                                                    <th>Category</th>
+                                                    <th>Image</th>
+                                            
+                                                    <th class="text-center">Action</th>
+                                                </tr>
+                                            </thead>
+                
+                                            <tbody>
+                
+                                
+                
+                                            </tbody>
+                
+                                        </table>
+                
+                                    </div>
+                
+                                </div>
+                
+                            </div>
                         </div>
-    
+                
                     </div>
-    
-                </div>
-            </div>
-    
-        </div>
-    </section>
+                </section>
 
-    
-    </div>
-    
+                
+                </div>
+</main>
+
+
+
+
+    <%- include('../partials/footer') %>
+</div>

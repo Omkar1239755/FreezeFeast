@@ -43,11 +43,11 @@
 
 
   // Route
-  import Router from './route/Website/home.route.js';
-  app.use(Router);
+import Router from './route/Website/home.route.js';
+app.use(Router);
 
 import AdminHomeRoute from './route/Admin/home.route.js';
-app.use(AdminHomeRoute); 
+app.use('/admin',AdminHomeRoute); 
 
 
   app.listen('3000',()=>{

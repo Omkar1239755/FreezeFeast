@@ -1,0 +1,48 @@
+<div class="app-wrapper">
+
+    <%- include('../partials/header') %>
+    <%- include('../partials/sidebar') %>
+    
+    <main class="app-main">
+    
+    <div class="container-fluid">
+    
+    <div class="card">
+    <div class="card-header">
+    <h4>Add Category</h4>
+    </div>
+    
+    <div class="card-body">
+    
+    <form action="/admin/add-category" method="POST" enctype="multipart/form-data">
+    
+            <div class="mb-3">
+            <label class="form-label">Category Name</label>
+            <input type="text" name="category_name" class="form-control" placeholder="Enter Category Name">
+            </div>
+            
+            <div class="mb-3">
+            <label class="form-label">Category Image</label>
+            <input type="file" name="image" class="form-control">
+            </div>
+    
+    <button type="submit" class="btn btn-success">
+    Save Category
+    </button>
+    
+    <a href="/admin/category" class="btn btn-secondary">
+    Back
+    </a>
+    
+    </form>
+    
+    </div>
+    </div>
+    
+    </div>
+    
+    </main>
+    
+    <%- include('../partials/footer') %>
+    
+    </div>

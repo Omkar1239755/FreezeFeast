@@ -17,80 +17,23 @@
                 </div>
             </div>
             <div class="ff-category-scroll-wrapper">
-                <div class="ff-category-scroll" id="categoryScroll">
-                    <a href="product-list.html" class="ff-category-card active">
-                        <div class="ff-category-img">
-                            <img src="assets/img/home-1/visit1.jpg" alt="All">
+
+                        <div class="ff-category-scroll" id="categoryScroll">
+                            
+                            <% data.forEach((item)=>{ %>
+
+                                <a href="#" class="ff-category-card">
+                                
+                                    <div class="ff-category-img">
+                                        <img src="/public/category/<%= item.image %>" alt="<%= item.category %>">
+                                    </div>
+                                
+                                    <span class="ff-category-name"><%= item.category %></span>
+                                
+                                </a>
+                                
+                                <% }) %>
                         </div>
-                        <span class="ff-category-name">All</span>
-                    </a>
-                    <a href="product-list.html" class="ff-category-card">
-                        <div class="ff-category-img">
-                            <img src="assets/img/home-1/popular-items1.jpg" alt="Breakfast">
-                        </div>
-                        <span class="ff-category-name">Breakfast</span>
-                    </a>
-                    <a href="product-list.html" class="ff-category-card">
-                        <div class="ff-category-img">
-                            <img src="assets/img/home-1/popular-items2.jpg" alt="Lunch">
-                        </div>
-                        <span class="ff-category-name">Lunch</span>
-                    </a>
-                    <a href="product-list.html" class="ff-category-card">
-                        <div class="ff-category-img">
-                            <img src="assets/img/home-1/popular-items3.jpg" alt="Dinner">
-                        </div>
-                        <span class="ff-category-name">Dinner</span>
-                    </a>
-                    <a href="product-list.html" class="ff-category-card">
-                        <div class="ff-category-img">
-                            <img src="assets/img/home-1/popular-items4.jpg" alt="Snacks">
-                        </div>
-                        <span class="ff-category-name">Snacks</span>
-                    </a>
-                    <a href="product-list.html" class="ff-category-card">
-                        <div class="ff-category-img">
-                            <img src="assets/img/home-1/popular-items5.jpg" alt="Desserts">
-                        </div>
-                        <span class="ff-category-name">Desserts</span>
-                    </a>
-                    <a href="product-list.html" class="ff-category-card">
-                        <div class="ff-category-img">
-                            <img src="assets/img/home-1/popular-items6.jpg" alt="Beverages">
-                        </div>
-                        <span class="ff-category-name">Beverages</span>
-                    </a>
-                    <a href="product-list.html" class="ff-category-card">
-                        <div class="ff-category-img">
-                            <img src="assets/img/home-1/pp-categori1.png" alt="Kebab">
-                        </div>
-                        <span class="ff-category-name">Kebab</span>
-                    </a>
-                    <a href="product-list.html" class="ff-category-card">
-                        <div class="ff-category-img">
-                            <img src="assets/img/home-1/pp-categori2.png" alt="Burger">
-                        </div>
-                        <span class="ff-category-name">Burger</span>
-                    </a>
-                    <a href="product-list.html" class="ff-category-card">
-                        <div class="ff-category-img">
-                            <img src="assets/img/home-1/pp-categori3.png" alt="Pizza">
-                        </div>
-                        <span class="ff-category-name">Pizza</span>
-                    </a>
-                    <a href="product-list.html" class="ff-category-card">
-                        <div class="ff-category-img">
-                            <img src="assets/img/home-1/pp-categori6.png" alt="Pasta">
-                        </div>
-                        <span class="ff-category-name">Pasta</span>
-                    </a>
-                    <a href="product-list.html" class="ff-category-card">
-                        <div class="ff-category-img">
-                            <img src="assets/img/home-1/pp-categori7.png" alt="Appetizers">
-                        </div>
-                        <span class="ff-category-name">Appetizers</span>
-                    </a>
-                </div>
             </div>
         </div>
     </section>

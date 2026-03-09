@@ -1,12 +1,14 @@
 import express from 'express';
-import {Index,Category} from '../../controller/AdminController/HomeController.js';
+import {Category,addCategory,storeCategory} from '../../controller/AdminController/HomeController.js';
+import {upload} from '../../middleware/upload.js'
 
 export const AdminHomeRoute =  express.Router();
 
 
-AdminHomeRoute.get('/admin',Index);
-AdminHomeRoute.get('/add-category',Category);
 
-
+AdminHomeRoute.get('/category',Category);
+AdminHomeRoute.get('/add-category', addCategory);
+// multer middle ware 
+AdminHomeRoute.post('/add-category',upload.single("image"),storeCategory);
 
 export default AdminHomeRoute;

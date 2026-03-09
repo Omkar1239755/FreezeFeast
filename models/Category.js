@@ -27,9 +27,9 @@ const Category = sequelize.define(
     },
   },
   {
-    tableName: "categories",   // must match migration
+    tableName: "Categories",   // must match migration
     timestamps: true,    // createdAt & updatedAt
   }
 );
 
-export default User;
+export default Category;

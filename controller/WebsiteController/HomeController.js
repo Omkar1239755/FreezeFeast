@@ -1,14 +1,23 @@
 import { register } from "module";
 import Joi from "joi";
 import User from "../../models/User.js";
+import CategoryModel from "../../models/Category.js";
+
 import bcrypt from 'bcryptjs';
 
 
-export const Index = async(req,res)=>{
+export const Index = async (req, res) => {
+    try {
 
-    return res.render("web/index",{name:"omkar"});
+    const data = await Category.findAll ;
 
-}
+    res.render("web/index", { data });
+
+    } catch (error) {
+    console.log("REAL ERROR:", error);
+    res.send(error.message);
+    }
+};
 
 export const RegisterUser  = async(req,res)=>{
 
@@ -25,7 +34,7 @@ export const RegisterData = async(req,res)=>{
             email: Joi.string().trim().required(),      
             password: Joi.string().min(6).required(),
             
-        }).unknown(true);;
+    }).unknown(true);;
 
        
 
