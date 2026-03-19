@@ -10,12 +10,6 @@ const Category = sequelize.define(
       primaryKey: true,
       allowNull: false,
     },
-
-    name: {
-      type: DataTypes.STRING,
-      allowNull: true,
-    },
-
     category: {
       type: DataTypes.STRING,
       allowNull: true

@@ -8,11 +8,9 @@ import bcrypt from 'bcryptjs';
 
 export const Index = async (req, res) => {
     try {
-
-    const data = await Category.findAll ;
-
+    const data = await CategoryModel.findAll() ;
+    console.log(data)
     res.render("web/index", { data });
-
     } catch (error) {
     console.log("REAL ERROR:", error);
     res.send(error.message);
@@ -67,14 +65,14 @@ export const RegisterData = async(req,res)=>{
 }
 
 
- export const LoginUser = async(req,res)=>{
+export const LoginUser = async(req,res)=>{
 
     return res.render('web/user/login');
 
  }
 
 
- export const LoginData = async(req,res)=>{
+export const LoginData = async(req,res)=>{
 
         const {email,password} = req.body;
         if(!email || !password){
@@ -108,47 +106,45 @@ export const RegisterData = async(req,res)=>{
 
     }
 
+export const  Logout = async(req,res)=>{
 
-
-    export const  Logout = async(req,res)=>{
-  
-        req.session.destroy((err) => {
-            if (err) {
-            console.log("Logout Error:", err);
-            return res.redirect("/");
-            }
-        
-            res.clearCookie("freeze_session"); 
-
-            return res.redirect("/login");
-        });
-    }
-
-
-    export const Category = async(req,res)=>{
-
-        return res.render('web/category');
-
-    }
-
-    export const About = async(req,res)=>{
-
-       return res.render('web/about');
-
-
-    }
-
-    export const Contact = async(req,res)=>{
-
-        return res.render('web/contact');
-
-     }
+    req.session.destroy((err) => {
+        if (err) {
+        console.log("Logout Error:", err);
+        return res.redirect("/");
+        }
     
+        res.clearCookie("freeze_session"); 
+
+        return res.redirect("/login");
+    });
+}
+
+
+export const Category = async(req,res)=>{
+
+    return res.render('web/category');
+
+}
+
+export const About = async(req,res)=>{
+
+    return res.render('web/about');
+
+
+}
+
+export const Contact = async(req,res)=>{
+
+    return res.render('web/contact');
+
+    }
+
      
-    export const Cart = async(req,res)=>{
-     console.log("helo")
-        return res.render('web/cart');
-    } 
+export const Cart = async(req,res)=>{
+    console.log("helo")
+    return res.render('web/cart');
+} 
 
     
 

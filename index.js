@@ -12,12 +12,16 @@
 
   //Where views live
   app.set("views", path.join(process.cwd(), "view"));
+  app.use(express.static('public'));
 
 
   // It tells Express where all the view templates like EJS files are located
   app.use(express.json());
   app.use(express.urlencoded({extended:false}));
   app.use('/assets', express.static('assets'));
+  // Category images
+  app.use('/category', express.static('public/category'));
+
 
   app.use(session({
       name: "freeze_session",
@@ -53,7 +57,6 @@ app.use('/admin',AdminHomeRoute);
   app.listen('3000',()=>{
       console.log('Server is start')
   });
-
 
 
 
