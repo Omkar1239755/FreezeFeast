@@ -1,8 +1,12 @@
 import Joi from "joi";
 import CategoryModel from "../../models/Category.js";
+    
 
 export const Category = async (req, res) => {
-  res.render("admin/category/index");
+
+    const data =  await CategoryModel.findAll();
+    res.render("admin/category/index",{data:data});
+
 };
 
 export const addCategory = async (req, res) => {
@@ -40,3 +44,36 @@ export const storeCategory = async (req, res) => {
      res.send(err.message);
    }
  };
+
+export const getFood = async(req,res)=>{
+try {
+    return res.render('admin/food/index');
+    } catch (error) {
+    res.send(error.message); 
+   }
+}
+
+export const addFood = async(req,res)=>{
+    try {
+      const category = await CategoryModel.findAll();
+      console.log(category);
+      return res.render('admin/food/add',{categories:category})
+    } catch (error) {
+      res.send(error.message); 
+    }
+}
+
+export const storeFood = async(req,res)=>{
+
+  try {
+
+
+    
+
+      
+  } catch (error) {
+      res.send(error.message); 
+    
+  }
+
+}
